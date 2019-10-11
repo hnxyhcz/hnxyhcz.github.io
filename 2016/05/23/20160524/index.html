@@ -16,18 +16,18 @@
 <meta property="og:site_name" content="Hnxyhcz的博客">
 <meta property="og:description" content="mybatis缓存mybatis缓存分为一级缓存和二级缓存 当某一个作用域(一级缓存Session/二级缓存Namespaces)的进行了 CREATE/UPDATE/DELETE 操作后，默认该作用域下所有 select 中的缓存将被clear。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://7xtuif.com1.z0.glb.clouddn.com/20160524090123.png">
-<meta property="og:image" content="http://7xtuif.com1.z0.glb.clouddn.com/20160524094082.png">
-<meta property="og:updated_time" content="2019-10-11T09:05:35.028Z">
+<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/20160524090123.png">
+<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/20160524094082.png">
+<meta property="og:updated_time" content="2019-10-11T09:09:31.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mybatis缓存">
 <meta name="twitter:description" content="mybatis缓存mybatis缓存分为一级缓存和二级缓存 当某一个作用域(一级缓存Session/二级缓存Namespaces)的进行了 CREATE/UPDATE/DELETE 操作后，默认该作用域下所有 select 中的缓存将被clear。">
-<meta name="twitter:image" content="http://7xtuif.com1.z0.glb.clouddn.com/20160524090123.png">
+<meta name="twitter:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/20160524090123.png">
   
     <link rel="alternative" href="/atom.xml" title="Hnxyhcz的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://7xtuif.com1.z0.glb.clouddn.com/favicon-z.png">
+    <link rel="icon" href="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/favicon-z.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -51,7 +51,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://7xtuif.com1.z0.glb.clouddn.com/avatar1.jpg" class="js-avatar">
+			<img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/avatar1.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">hnxyhcz</a></h1>
@@ -105,7 +105,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://7xtuif.com1.z0.glb.clouddn.com/avatar1.jpg" class="js-avatar">
+				<img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/avatar1.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">hnxyhcz</h1>
@@ -182,7 +182,7 @@
 <p>1) 单独使用MyBatis而不继承Spring,使用原生的MyBatis的SqlSessionFactory来构造sqlSession查询,是可以使用以及缓存的,示例代码如下</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        String config = <span class="string">"mybatis-config.xml"</span>;</span><br><span class="line">        InputStream is = Resources.getResourceAsStream(config);</span><br><span class="line">        SqlSessionFactory factory = <span class="keyword">new</span> SqlSessionFactoryBuilder().build(is);</span><br><span class="line">        SqlSession session = factory.openSession();</span><br><span class="line">        System.out.println(session.selectOne(<span class="string">"selectUserByID"</span>, <span class="number">1</span>));</span><br><span class="line">        <span class="comment">// 同一个session的相同sql查询,将会使用一级缓存 </span></span><br><span class="line">        System.out.println(session.selectOne(<span class="string">"selectUserByID"</span>, <span class="number">1</span>));</span><br><span class="line">        <span class="comment">// 参数改变,需要重新查询</span></span><br><span class="line">        System.out.println(session.selectOne(<span class="string">"selectUserByID"</span>, <span class="number">2</span>));</span><br><span class="line">        <span class="comment">// 清空缓存后需要重新查询</span></span><br><span class="line">        session.clearCache();</span><br><span class="line">        System.out.println(session.selectOne(<span class="string">"selectUserByID"</span>, <span class="number">1</span>));</span><br><span class="line">        <span class="comment">// session close以后,仍然使用同一个db connection</span></span><br><span class="line">        session.close();</span><br><span class="line">        session = factory.openSession();</span><br><span class="line">        System.out.println(session.selectOne(<span class="string">"selectUserByID"</span>, <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>输出如下图所示：</p>
-<p><img src="http://7xtuif.com1.z0.glb.clouddn.com/20160524090123.png" alt></p>
+<p><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/20160524090123.png" alt></p>
 <p>由上图可以看出，当参数不变时，只进行了一次查询。参数变更以后，则需要重新进行查询，而清空缓存以后,参数相同的查询过的SQL也需要重新查询,而且使用的数据库连接是同一个数据库连接,这里要得益于我们在mybatis-config.xml里面的datasource设置</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">"development"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"development"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">transactionManager</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"com.mysql.jdbc.Driver"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql://127.0.0.1:3306/mybatistest?characterEncoding=utf8"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"root"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"root"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>注意datasource使用的是POOLED,也就是使用了连接池,所以数据库连接可回收利用,当然这个environment属性在集成spring的时候是不需要的,因为我们需要另外配置datasource的bean.</p>
@@ -190,7 +190,7 @@
 <p>直接在dao里查询两次同样参数的sql</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserDao</span> <span class="keyword">extends</span> <span class="title">SqlSessionDaoSupport</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">selectUserById</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">        SqlSession session = getSqlSession();</span><br><span class="line">        session.selectOne(<span class="string">"dao.userdao.selectUserByID"</span>, id);</span><br><span class="line">        <span class="comment">// 由于session的实现是SqlSessionTemplate的动态代理实现</span></span><br><span class="line">        <span class="comment">// 它已经在代理类内执行了session.close(),所以无需手动关闭session</span></span><br><span class="line">        <span class="keyword">return</span> session.selectOne(<span class="string">"dao.userdao.selectUserByID"</span>, id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>日志信息如下：</p>
-<p><img src="http://7xtuif.com1.z0.glb.clouddn.com/20160524094082.png" alt></p>
+<p><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/20160524094082.png" alt></p>
 <p>这里执行了2次sql查询,看似我们使用了同一个sqlSession,但是实际上因为我们的dao继承了SqlSessionDaoSupport,而SqlSessionDaoSupport内部sqlSession的实现是使用用动态代理实现的,这个动态代理sqlSessionProxy使用一个模板方法封装了select()等操作,每一次select()查询都会自动先执行openSession(),执行完close()以后调用close()方法,相当于生成了一个新的session实例,所以我们无需手动的去关闭这个session()(关于这一点见下面mybatis的官方文档),当然也无法使用mybatis的一级缓存,也就是说mybatis的一级缓存在spring中是没有作用的.</p>
 <h3 id="二级缓存"><a href="#二级缓存" class="headerlink" title="二级缓存"></a>二级缓存</h3><p>二级缓存与一级缓存其机制相同，默认也是采用 PerpetualCache，HashMap存储，不同在于其存储作用域为 Mapper(Namespace)，并且可自定义存储源，如 Ehcache、Hazelcast等。<br>二级缓存可以被配置为打开或者关闭，默认为关闭，在mybatis.xml中配置。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"cacheEnabled"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
@@ -216,13 +216,13 @@
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://7xtuif.com1.z0.glb.clouddn.com/alipay.png">
+                      <img class="reward-img" src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/alipay.png">
                       <span class="reward-type">支付宝</span>
                     </div>
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://7xtuif.com1.z0.glb.clouddn.com/wechatpay.png">
+                      <img class="reward-img" src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/wechatpay.png">
                       <span class="reward-type">微信</span>
                     </div>
                     
