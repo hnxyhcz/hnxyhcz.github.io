@@ -16,23 +16,23 @@
 <meta property="og:site_name" content="Hnxyhcz的博客">
 <meta property="og:description" content="Docker容器是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的Linux机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）。几乎没有性能开销,可以很容易地在机器和数据中心中运行。最重要的是,他们不依赖于任何语言、框架包括系统。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121033.png">
-<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121036.png">
-<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121033.png">
-<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121036.png">
-<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121321.png">
-<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121327.png">
-<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121335.png">
-<meta property="og:updated_time" content="2019-10-11T09:09:31.874Z">
+<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121033.png?raw=true">
+<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121036.png?raw=true">
+<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121033.png?raw=true">
+<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121036.png?raw=true">
+<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121321.png?raw=true">
+<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121327.png?raw=true">
+<meta property="og:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121335.png?raw=true">
+<meta property="og:updated_time" content="2019-10-11T09:14:20.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker学习 - 容器">
 <meta name="twitter:description" content="Docker容器是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的Linux机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）。几乎没有性能开销,可以很容易地在机器和数据中心中运行。最重要的是,他们不依赖于任何语言、框架包括系统。">
-<meta name="twitter:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121033.png">
+<meta name="twitter:image" content="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121033.png?raw=true">
   
     <link rel="alternative" href="/atom.xml" title="Hnxyhcz的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/favicon-z.png">
+    <link rel="icon" href="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/favicon-z.png?raw=true">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -56,7 +56,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/avatar1.jpg" class="js-avatar">
+			<img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/avatar1.jpg?raw=true" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">hnxyhcz</a></h1>
@@ -110,7 +110,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/avatar1.jpg" class="js-avatar">
+				<img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/avatar1.jpg?raw=true" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">hnxyhcz</h1>
@@ -185,16 +185,16 @@
 <font color="red">注：镜像是只读的，容器在启动的时候创建一层可写层作为最上层。</font>
 
 <h3 id="查看容器"><a href="#查看容器" class="headerlink" title="查看容器"></a>查看容器</h3><p>1.使用 docker ps 命令下载镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 查看所有容器</span><br><span class="line">docker ps -a</span><br><span class="line"># 查看已启动的容器</span><br><span class="line">docker ps -l</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121033.png" alt title="启动tomcat容器"><br>根据图片可以看出启动tomcat容器后，产生一个伪终端，可以与之交互<br><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121036.png" alt title="与伪终端交互"></p>
+<p><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121033.png?raw=true" alt title="启动tomcat容器"><br>根据图片可以看出启动tomcat容器后，产生一个伪终端，可以与之交互<br><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121036.png?raw=true" alt title="与伪终端交互"></p>
 <h3 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h3><p>1.使用 docker run 命令启动容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 启动tomcat镜像，并进入伪终端，可以与之交互，通过exit命令退出伪终端</span><br><span class="line">docker run -ti docker.io/hnxyhcz/tomcat7 /bin/bash</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121033.png" alt title="启动tomcat容器"><br>根据图片可以看出启动tomcat容器后，产生一个伪终端，可以与之交互<br><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121036.png" alt title="与伪终端交互"></p>
+<p><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121033.png?raw=true" alt title="启动tomcat容器"><br>根据图片可以看出启动tomcat容器后，产生一个伪终端，可以与之交互<br><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121036.png?raw=true" alt title="与伪终端交互"></p>
 <p>2.使用 docker start 命令启动一个已经存在的容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># docker start &lt;容器id&gt; 启动一个已存在的容器</span><br><span class="line">docker start cd38a19c0e63</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121321.png" alt title="启动容器"></p>
+<p><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121321.png?raw=true" alt title="启动容器"></p>
 <p>3.使用 docker restart 命令重启一个容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># docker restart &lt;容器id&gt; 重启容器</span><br><span class="line">docker restart cd38a19c0e63</span><br></pre></td></tr></table></figure></p>
 <h3 id="关闭容器"><a href="#关闭容器" class="headerlink" title="关闭容器"></a>关闭容器</h3><p>使用 docker stop 命令关闭容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># docker stop &lt;容器id&gt; 关闭容器</span><br><span class="line">docker stop cd38a19c0e63</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121327.png" alt title="启动容器"></p>
+<p><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121327.png?raw=true" alt title="启动容器"></p>
 <h3 id="进入启动状态的容器"><a href="#进入启动状态的容器" class="headerlink" title="进入启动状态的容器"></a>进入启动状态的容器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># docker exec -it 容器ID /bin/bash</span><br><span class="line">docker exec -it cd38a19c0e63 /bin/bash</span><br><span class="line"># 或者使用 docker attach 容器ID/容器名</span><br><span class="line">docker attach cd38a19c0e63</span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121335.png" alt title="进入容器"></p>
+<p><img src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/201705121335.png?raw=true" alt title="进入容器"></p>
 <h3 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h3><p>使用 docker rm 命令删除容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker rm 容器id或容器名</span><br><span class="line"></span><br><span class="line"># 杀死所有正在运行的容器  </span><br><span class="line">docker kill $(docker ps -a -q)  </span><br><span class="line"># 删除所有已经停止的容器  </span><br><span class="line">docker rm $(docker ps -a -q)</span><br></pre></td></tr></table></figure></p>
 <h3 id="自定义容器名"><a href="#自定义容器名" class="headerlink" title="自定义容器名"></a>自定义容器名</h3><p>在docker run时添加参数 –name 容器名 指定容器名，如果没有指定，docker会自动生成一个名称。<br><strong>容器名是唯一的，如果已经存在，则启动失败</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># --name tomcat  定义容器名为tomcat</span><br><span class="line">docker run -ti --name tomcat docker.io/hnxyhcz/tomcat7 /bin/bash</span><br></pre></td></tr></table></figure></p>
 
@@ -214,13 +214,13 @@
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/alipay.png">
+                      <img class="reward-img" src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/alipay.png?raw=true">
                       <span class="reward-type">支付宝</span>
                     </div>
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/wechatpay.png">
+                      <img class="reward-img" src="https://github.com/hnxyhcz/MyBlog/blob/master/source/images/wechatpay.png?raw=true">
                       <span class="reward-type">微信</span>
                     </div>
                     
