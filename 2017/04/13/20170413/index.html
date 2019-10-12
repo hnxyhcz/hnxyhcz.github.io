@@ -17,7 +17,7 @@
 <meta property="og:description" content="PLSQL中文显示乱码，可能是oracle客户端和服务器端的编码方式不一样。 查询ORACLE服务器的语言、地域和字符集1select * from nls_database_parameters;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/hnxyhcz/hnxyhcz.github.io/master/images/2017041314294395.png">
-<meta property="og:updated_time" content="2019-10-12T02:09:31.093Z">
+<meta property="og:updated_time" content="2019-10-12T02:50:08.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PLSQL中文显示乱码">
 <meta name="twitter:description" content="PLSQL中文显示乱码，可能是oracle客户端和服务器端的编码方式不一样。 查询ORACLE服务器的语言、地域和字符集1select * from nls_database_parameters;">
@@ -175,6 +175,7 @@
       
         <p><strong>PLSQL中文显示乱码，可能是oracle客户端和服务器端的编码方式不一样。</strong></p>
 <h3 id="查询ORACLE服务器的语言、地域和字符集"><a href="#查询ORACLE服务器的语言、地域和字符集" class="headerlink" title="查询ORACLE服务器的语言、地域和字符集"></a><font color="red">查询ORACLE服务器的语言、地域和字符集</font></h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> nls_database_parameters;</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 <p>查询结果如下图所示：<br><img src="https://raw.githubusercontent.com/hnxyhcz/hnxyhcz.github.io/master/images/2017041314294395.png" alt></p>
 <blockquote>
@@ -185,9 +186,7 @@
 <p>进入 我的电脑,属性,高级,配置环境变量:<br>设置NLS_LANG=”AMERICAN_AMERICA.AL32UTF8”<br>（<strong>注意：这里要根据你的ORACLE服务器的这三个值进行拼接</strong>）</p>
 </blockquote>
 <p>OK，重新打开PLSQL develop  ,中文显示正常拉~~</p>
-<font color="red">还有一点需要注意的是：网上很多方案说要修改本地注册表中的“HKEY_LOCAL_MACHINE-&gt;SOFTWARE-&gt;ORACLE-&gt;KEY_OraClient11g_home1”项，其实这是不对的，这已注册表项是本地ORACLE的字符集，跟你要访问的服务器ORACLE没有关系的。</font>
-
-
+<p><font color="red">还有一点需要注意的是：网上很多方案说要修改本地注册表中的“HKEY_LOCAL_MACHINE-&gt;SOFTWARE-&gt;ORACLE-&gt;KEY_OraClient11g_home1”项，其实这是不对的，这已注册表项是本地ORACLE的字符集，跟你要访问的服务器ORACLE没有关系的。</font></p>
 <p><strong>转载：</strong><br><a href="http://blog.sina.com.cn/s/blog_476c81d60101a049.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_476c81d60101a049.html</a></p>
 
       
@@ -496,15 +495,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">kill session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hnxyhcz的博客">
 <meta property="og:description" content="npm是什么　　npm(Node Package Manager, Node包管理器)是Node.js的包管理器，它允许开发人员在Node.js应用程序中创建、共享并重用模块。它也可以用于共享完整的Node.js应用程序。模块就是可以在不同项目中重用的代码库。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-12T02:09:31.093Z">
+<meta property="og:updated_time" content="2019-10-12T02:50:08.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm(Node包管理器)">
 <meta name="twitter:description" content="npm是什么　　npm(Node Package Manager, Node包管理器)是Node.js的包管理器，它允许开发人员在Node.js应用程序中创建、共享并重用模块。它也可以用于共享完整的Node.js应用程序。模块就是可以在不同项目中重用的代码库。">
@@ -171,16 +171,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="npm是什么"><a href="#npm是什么" class="headerlink" title="npm是什么"></a>npm是什么</h3><p>　　npm(Node Package Manager, Node包管理器)是Node.js的包管理器，它允许开发人员在Node.js应用程序中创建、共享并重用模块。它也可以用于共享完整的Node.js应用程序。模块就是可以在不同项目中重用的代码库。<br><a id="more"></a></p>
-<h3 id="使用npm安装模块"><a href="#使用npm安装模块" class="headerlink" title="使用npm安装模块"></a>使用npm安装模块</h3><p>当你安装了npm之后，就可以从终端开安装模块了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1)本地安装 npm install [module_name]</span><br><span class="line">2)全局安装 npm install -g [module_name]</span><br><span class="line"></span><br><span class="line">区别：</span><br><span class="line">    全局安装</span><br><span class="line">      1. 一般在  \Users\用户名\AppData\Roaming\npm\node_modules 目录下，可以使用npm root -g查看全局安装目录</span><br><span class="line">      2. 直接在命令行里使用,不能通过require()的方式引用</span><br><span class="line"></span><br><span class="line">    本地安装：</span><br><span class="line">      1. 包安装在指定项目的node_modules文件夹下。</span><br><span class="line">      2. 可以通过 require() 来引入本地安装的包</span><br><span class="line">      优点：</span><br><span class="line">        本地安装可以让每个项目拥有独立的包，不受全局包的影响，方便项目的移动、复制、打包等，保证不同版本包之间的相互依赖</span><br><span class="line">      缺点：</span><br><span class="line">        每次新项目都要本地安装所依赖的包，安装包时间相对较长</span><br><span class="line">        浪费了硬盘空间</span><br></pre></td></tr></table></figure></p>
-<p>安装成功返回信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;module_name@版本号 模块下载位置&quot;</span><br></pre></td></tr></table></figure></p>
-<p>这行输出告诉我们</p>
-<pre><code>- 成功安装的模块名称
-- 模块的版本
-- 模块安装所在位置
-</code></pre><p><strong>注意：由于模块npm注册(registry)和源文件都托管在Internet上，所有通过npm安装模块时，需要与Internet连接。</strong></p>
-<h3 id="如何查找模块文档"><a href="#如何查找模块文档" class="headerlink" title="如何查找模块文档"></a>如何查找模块文档</h3><p>通过运行如下命令可以在浏览器中查看模块文档：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm docs [module_name]</span><br></pre></td></tr></table></figure></p>
-<p>通过运行如下命令也可以查看项目的bug：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm bugs [module_name]</span><br></pre></td></tr></table></figure></p>
+        <h3 id="npm是什么"><a href="#npm是什么" class="headerlink" title="npm是什么"></a>npm是什么</h3><p>　　npm(Node Package Manager, Node包管理器)是Node.js的包管理器，它允许开发人员在Node.js应用程序中创建、共享并重用模块。它也可以用于共享完整的Node.js应用程序。模块就是可以在不同项目中重用的代码库。</p>
+<a id="more"></a>
+<h3 id="使用npm安装模块"><a href="#使用npm安装模块" class="headerlink" title="使用npm安装模块"></a>使用npm安装模块</h3><p>当你安装了npm之后，就可以从终端开安装模块了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1)本地安装 npm install [module_name]</span><br><span class="line">2)全局安装 npm install -g [module_name]</span><br><span class="line"></span><br><span class="line">区别：</span><br><span class="line">    全局安装</span><br><span class="line">      1. 一般在  \Users\用户名\AppData\Roaming\npm\node_modules 目录下，可以使用npm root -g查看全局安装目录</span><br><span class="line">      2. 直接在命令行里使用,不能通过require()的方式引用</span><br><span class="line"></span><br><span class="line">    本地安装：</span><br><span class="line">      1. 包安装在指定项目的node_modules文件夹下。</span><br><span class="line">      2. 可以通过 require() 来引入本地安装的包</span><br><span class="line">      优点：</span><br><span class="line">        本地安装可以让每个项目拥有独立的包，不受全局包的影响，方便项目的移动、复制、打包等，保证不同版本包之间的相互依赖</span><br><span class="line">      缺点：</span><br><span class="line">        每次新项目都要本地安装所依赖的包，安装包时间相对较长</span><br><span class="line">        浪费了硬盘空间</span><br></pre></td></tr></table></figure>
+
+<p>安装成功返回信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;module_name@版本号 模块下载位置&quot;</span><br></pre></td></tr></table></figure>
+
+<p>这行输出告诉我们<br>    - 成功安装的模块名称<br>    - 模块的版本<br>    - 模块安装所在位置</p>
+<p><strong>注意：由于模块npm注册(registry)和源文件都托管在Internet上，所有通过npm安装模块时，需要与Internet连接。</strong></p>
+<h3 id="如何查找模块文档"><a href="#如何查找模块文档" class="headerlink" title="如何查找模块文档"></a>如何查找模块文档</h3><p>通过运行如下命令可以在浏览器中查看模块文档：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm docs [module_name]</span><br></pre></td></tr></table></figure>
+
+<p>通过运行如下命令也可以查看项目的bug：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm bugs [module_name]</span><br></pre></td></tr></table></figure>
+
 <h3 id="使用package-json指定依赖关系"><a href="#使用package-json指定依赖关系" class="headerlink" title="使用package.json指定依赖关系"></a>使用package.json指定依赖关系</h3><p>通过“npm install”命令来安装package.json文件里指定的模块。</p>
 
       
@@ -489,15 +495,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">kill session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hnxyhcz的博客">
 <meta property="og:description" content="环境准备安装Node到 Node.js 官网下载相应平台的最新版本，一路安装即可。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-12T02:09:31.097Z">
+<meta property="og:updated_time" content="2019-10-12T02:50:08.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo搭建静态博客">
 <meta name="twitter:description" content="环境准备安装Node到 Node.js 官网下载相应平台的最新版本，一路安装即可。">
@@ -172,27 +172,38 @@
       
         <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="安装Node"><a href="#安装Node" class="headerlink" title="安装Node"></a>安装Node</h3><p>到 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a> 官网下载相应平台的最新版本，一路安装即可。</p>
 <a id="more"></a>
+
 <h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>Git的客户端很多，自行百度，下载下来设置一下环境变量即可。</p>
 <h3 id="安装文件编辑器"><a href="#安装文件编辑器" class="headerlink" title="安装文件编辑器"></a>安装文件编辑器</h3><p>这里我使用的是 <a href="http://www.sublimetext.com/3" target="_blank" rel="noopener">Sublime Text 3</a> 支持各种编程语言和文件格式，当然也支持Markdown语法咯~</p>
 <h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h3><blockquote>
 <p>GitHub账号和GitHub Pages 一般都应该有吧，已有的请自动无视这一部分。</p>
 </blockquote>
 <ul>
-<li>首先注册一个『GitHub』帐号，已有的默认默认请忽略</li>
-<li>建立与你用户名对应的仓库，仓库名必须为『your_user_name.github.com』</li>
+<li><p>首先注册一个『GitHub』帐号，已有的默认默认请忽略</p>
+</li>
+<li><p>建立与你用户名对应的仓库，仓库名必须为『your_user_name.github.com』</p>
+</li>
 <li><p>添加SSH公钥到『Account settings -&gt; SSH Keys -&gt; Add SSH Key』<br>  1 首先设置你的用户名和密码：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;hnxyhcz@hotmail.com&quot;</span><br><span class="line">git config --global user.name &quot;hnxyhcz&quot;</span><br></pre></td></tr></table></figure>
+
 <p>  2 生成密钥：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;hnxyhcz@hotmail.com&quot;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>Node 和 Git 都安装好后，可执行如下命令安装hexo：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure></p>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>然后，执行init命令初始化hexo到你指定的目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;floder&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>Node 和 Git 都安装好后，可执行如下命令安装hexo：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
+
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>然后，执行init命令初始化hexo到你指定的目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;floder&gt;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>也可以cd到目标目录，执行 “hexo init”。</p>
 </blockquote>
 <p>好啦，至此全部安装工作已经完成啦~！</p>
-<h2 id="设置博客主题"><a href="#设置博客主题" class="headerlink" title="设置博客主题"></a>设置博客主题</h2><h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>hexo官网上有很多<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题</a>，我这里使用的主题是<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT</a>。<br>在终端窗口下，定位到 Hexo 站点目录下。使用 Git checkout 代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
+<h2 id="设置博客主题"><a href="#设置博客主题" class="headerlink" title="设置博客主题"></a>设置博客主题</h2><h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>hexo官网上有很多<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题</a>，我这里使用的主题是<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT</a>。<br>在终端窗口下，定位到 Hexo 站点目录下。使用 Git checkout 代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
 <h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>与所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开 站点配置文件， 找到 theme 字段，并将其值更改为 next。</p>
 <blockquote>
 <p>theme: next</p>
@@ -203,11 +214,14 @@
 </blockquote>
 <p>注意：为避免出错，请先备份你的_config.yml 文件后再升级</p>
 <h2 id="用Markdown写博客"><a href="#用Markdown写博客" class="headerlink" title="用Markdown写博客"></a>用Markdown写博客</h2><h3 id="新建博客"><a href="#新建博客" class="headerlink" title="新建博客"></a>新建博客</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"new-article"</span></span><br></pre></td></tr></table></figure>
+
 <p>之后在source/_posts目录下面，多了一个new-article.md的文件。<br>打开之后我们会看到：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: new article</span><br><span class="line">date: 2014-11-01 20:10:33</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
 <p>文件的开头是属性，采用统一的yaml格式，用三条短横线分隔。下面是文章正文。<br>文章的正文支持markdown格式，建议你先学习一下它的语法。markdown不像html似的一大堆标签，很简单，只有几个符号。<br>新建、删除或修改文章后，不需要重启hexo server，刷新一下即可预览。</p>
 <h3 id="分类和标签"><a href="#分类和标签" class="headerlink" title="分类和标签"></a>分类和标签</h3><p>例如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 日记</span><br><span class="line">tags:</span><br><span class="line">- Hexo</span><br><span class="line">- node.js</span><br></pre></td></tr></table></figure>
+
 <h3 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h3><p>草稿相当于很多博客都有的“私密文章”功能。</p>
 <blockquote>
 <p>$ hexo new draft “new draft”</p>
@@ -246,20 +260,18 @@
 <thead>
 <tr>
 <th>选项</th>
-<th style="text-align:center">描述</th>
+<th align="center">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>-d, –deploy</td>
-<td style="text-align:center">文件生成后立即部署网站</td>
+<td align="center">文件生成后立即部署网站</td>
 </tr>
 <tr>
 <td>-w, –watch</td>
-<td style="text-align:center">监视文件变动</td>
+<td align="center">监视文件变动</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="publish"><a href="#publish" class="headerlink" title="publish"></a>publish</h3><blockquote>
 <p>$ hexo publish [layout] <filename></filename></p>
 </blockquote>
@@ -272,24 +284,22 @@
 <thead>
 <tr>
 <th>选项</th>
-<th style="text-align:center">描述</th>
+<th align="center">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>-p, –port</td>
-<td style="text-align:center">重设端口</td>
+<td align="center">重设端口</td>
 </tr>
 <tr>
 <td>-s, –static</td>
-<td style="text-align:center">只使用静态文件</td>
+<td align="center">只使用静态文件</td>
 </tr>
 <tr>
 <td>-l, –log</td>
-<td style="text-align:center">启动日记记录，使用覆盖记录格式</td>
+<td align="center">启动日记记录，使用覆盖记录格式</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h3><blockquote>
 <p>$ hexo deploy</p>
 </blockquote>
@@ -298,22 +308,21 @@
 <thead>
 <tr>
 <th>参数</th>
-<th style="text-align:center">描述</th>
+<th align="center">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>-g, –generate</td>
-<td style="text-align:center">部署之前预先生成静态文件</td>
+<td align="center">部署之前预先生成静态文件</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>执行完以后,如果报错 <font color="red">Error: Deployer not found : github</font>,则执行如下命令:</p>
 <blockquote>
 <p>npm install hexo-deployer-git –save</p>
 </blockquote>
 <p>然后再执行:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a><font color="green">参考</font></h2><p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">Hexo官方文档</a><br><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">NexT样式官方文档</a><br><a href="https://wizardforcel.gitbooks.io/markdown-simple-world/content/2.html" target="_blank" rel="noopener">Markdown指南</a><br><a href="http://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="noopener">http://www.jianshu.com/p/05289a4bc8b2</a><br><a href="http://www.tuicool.com/articles/AfQnQjy/" target="_blank" rel="noopener">http://www.tuicool.com/articles/AfQnQjy/</a><br><a href="http://www.cnblogs.com/liulangmao/p/4323064.html" target="_blank" rel="noopener">http://www.cnblogs.com/liulangmao/p/4323064.html</a></p>
 
       
@@ -600,15 +609,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">kill session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
               </li>
              
               <li class="article-tag-list-item">

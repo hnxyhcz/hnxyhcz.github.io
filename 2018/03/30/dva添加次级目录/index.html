@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hnxyhcz的博客">
 <meta property="og:description" content="把dist文件夹部署在一个域名的次级目录（localhost:8080/csp/酱紫） 这里记录一下如何操作：  修改roadhogrc.js文件的publicPath 12/* 指定的是静态资源文件构建后在html里的路径 */publicPath: `/csp/$&amp;#123;version&amp;#125;/`,  修改src文件夹下的index.js文件的history 1234567const">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-12T02:09:31.097Z">
+<meta property="og:updated_time" content="2019-10-12T02:50:08.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dva部署在次级目录">
 <meta name="twitter:description" content="把dist文件夹部署在一个域名的次级目录（localhost:8080/csp/酱紫） 这里记录一下如何操作：  修改roadhogrc.js文件的publicPath 12/* 指定的是静态资源文件构建后在html里的路径 */publicPath: `/csp/$&amp;#123;version&amp;#125;/`,  修改src文件夹下的index.js文件的history 1234567const">
@@ -184,7 +184,7 @@
 </li>
 </ol>
 <ul>
-<li>配置BASE_URL添加目录 (BASE_URL: production ? JSON.stringify(‘/csp’) : JSON.stringify(‘<a href="http://localhost:8000/api/v1&#39;)," target="_blank" rel="noopener">http://localhost:8000/api/v1&#39;),</a>)</li>
+<li>配置BASE_URL添加目录 (BASE_URL: production ? JSON.stringify(‘/csp’) : JSON.stringify(‘<a href="http://localhost:8000/api/v1&#39;" target="_blank" rel="noopener">http://localhost:8000/api/v1&#39;</a>),)</li>
 <li>添加BASE_PREFIX (BASE_PREFIX: production ? JSON.stringify(‘/csp’) : JSON.stringify(‘’),)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    * DefinePlugin 允许创建一个在编译时可以配置的全局常量。这可能会对开发模式和发布模式的构建允许不同的行为非常有用</span></span><br><span class="line"><span class="comment">    * 参考：http://www.css88.com/doc/webpack/plugins/define-plugin/</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">    BASE_URL: production ? <span class="built_in">JSON</span>.stringify(<span class="string">'/csp'</span>) : <span class="built_in">JSON</span>.stringify(<span class="string">'http://localhost:8000/api/v1'</span>),</span><br><span class="line">    BASE_PREFIX: production ? <span class="built_in">JSON</span>.stringify(<span class="string">'/csp'</span>) : <span class="built_in">JSON</span>.stringify(<span class="string">''</span>),</span><br><span class="line">&#125;),</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -494,15 +494,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">kill session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
               </li>
              
               <li class="article-tag-list-item">

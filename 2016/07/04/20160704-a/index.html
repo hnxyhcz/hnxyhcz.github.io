@@ -17,7 +17,7 @@
 <meta property="og:description" content="异常最近在做Web开发的时候，使用$.post提交数据，但是回调函数却没有被触发，按F12看控制台输出是：POST *** 400 Bad Request控制台报错信息如下图所示：">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/hnxyhcz/hnxyhcz.github.io/master/images/201607041419.png">
-<meta property="og:updated_time" content="2019-10-12T02:09:31.093Z">
+<meta property="og:updated_time" content="2019-10-12T02:50:08.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="POST 400 Bad Request The request sent by the client was syntactically incorrect">
 <meta name="twitter:description" content="异常最近在做Web开发的时候，使用$.post提交数据，但是回调函数却没有被触发，按F12看控制台输出是：POST *** 400 Bad Request控制台报错信息如下图所示：">
@@ -173,11 +173,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>最近在做Web开发的时候，使用$.post提交数据，但是回调函数却没有被触发，按F12看控制台输出是：POST *** 400 Bad Request<br>控制台报错信息如下图所示：<br><img src="https://raw.githubusercontent.com/hnxyhcz/hnxyhcz.github.io/master/images/201607041419.png" alt><br><a id="more"></a></p>
+        <h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>最近在做Web开发的时候，使用$.post提交数据，但是回调函数却没有被触发，按F12看控制台输出是：POST *** 400 Bad Request<br>控制台报错信息如下图所示：<br><img src="https://raw.githubusercontent.com/hnxyhcz/hnxyhcz.github.io/master/images/201607041419.png" alt></p>
+<a id="more"></a>
+
 <h3 id="出错原因"><a href="#出错原因" class="headerlink" title="出错原因"></a>出错原因</h3><p>出现这个问题是什么原因造成的呢？<br>后测试发现，提交表单的数据类型与实体的（也就是数据表字段）的数据类型不匹配导致的。<br>在提交表单之前应该对用户输入的内容做验证，后台直接做映射了，没有做类型的转换。导致400 Bad Request错误。</p>
 <h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>注意前后台数据类型要保持一致</p>
 <h3 id="扩展知识"><a href="#扩展知识" class="headerlink" title="扩展知识"></a>扩展知识</h3><p>通过查看JQuery资料了解到$.post提交数据只有成功时才会触发回调函数，使用$.ajax提交数据，添加error回调函数，能够得到错误信息.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    type: <span class="string">"POST"</span>,</span><br><span class="line">    url: <span class="string">"$&#123;ctx&#125;/dat/lockScreen/deleteLockScreen"</span>,</span><br><span class="line">    data: &#123;<span class="attr">lockScreenId</span>:lockScreenId&#125;,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">msg</span>)</span>&#123;</span><br><span class="line">        alert( <span class="string">"Success: "</span> + msg );</span><br><span class="line">    &#125;,</span><br><span class="line">    error: <span class="function"><span class="keyword">function</span>(<span class="params">XMLHttpRequest</span>)</span>&#123;</span><br><span class="line">        alert( <span class="string">"Error: "</span> + XMLHttpRequest.responseText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>这样你就可以通过 XMLHttpRequest.responseText 或XMLHttpRequest.responseHTML 了解到后端代码到底发生了什么错误。</p>
 <p>参考：<br><a href="http://blog.csdn.net/testcs_dn/article/details/38015111" target="_blank" rel="noopener">http://blog.csdn.net/testcs_dn/article/details/38015111</a></p>
 
@@ -491,15 +494,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">kill session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
               </li>
              
               <li class="article-tag-list-item">

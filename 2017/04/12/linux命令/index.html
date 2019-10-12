@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hnxyhcz的博客">
 <meta property="og:description" content="Linux常用命令 解压zip文件：unzip filename.zip  复制文件夹（复制源文件到目标文件）  cp -rf 源文件目录 目标文件目录  删除文件或目录  rm -rf 文件或目录   显示文件末尾内容：tail -f fileName  查看tomcat日志  tail -f ../tomcat/logs/catalina.out  筛选查看进程  ps -ef|grep 进程">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-12T02:09:31.097Z">
+<meta property="og:updated_time" content="2019-10-12T02:50:08.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令记录">
 <meta name="twitter:description" content="Linux常用命令 解压zip文件：unzip filename.zip  复制文件夹（复制源文件到目标文件）  cp -rf 源文件目录 目标文件目录  删除文件或目录  rm -rf 文件或目录   显示文件末尾内容：tail -f fileName  查看tomcat日志  tail -f ../tomcat/logs/catalina.out  筛选查看进程  ps -ef|grep 进程">
@@ -212,6 +212,7 @@
 <p>$ du –max-depth=1 -h ./*</p>
 </blockquote>
 <a id="more"></a>
+
 <h3 id="创建目录-gt-mkdir"><a href="#创建目录-gt-mkdir" class="headerlink" title="创建目录 -&gt; mkdir"></a>创建目录 -&gt; mkdir</h3><p><strong>命令格式</strong></p>
 <blockquote>
 <p>mkdir [选项] 目录名</p>
@@ -235,8 +236,7 @@
 <blockquote>
 <p>NO3. 在创建目录的同时给新建的目录赋权限</p>
 <blockquote>
-<p>[root@rehat root]# mkdir -m 777 testmod</p>
-<font color="red">这样任何人对此目录都有任何权限</font>
+<p>[root@rehat root]# mkdir -m 777 testmod<br><font color="red">这样任何人对此目录都有任何权限</font></p>
 </blockquote>
 </blockquote>
 <h3 id="复制文件与文件夹-gt-cp"><a href="#复制文件与文件夹-gt-cp" class="headerlink" title="复制文件与文件夹  -&gt; cp"></a>复制文件与文件夹  -&gt; cp</h3><p><strong>说明: cp指令用于复制文件或目录，如同时指定两个以上的文件或目录，且最后的目的地是一个已经存在的目录，则它会把前面指定的所有文件或目录复制到此目录中。</strong> </p>
@@ -255,8 +255,7 @@
 <blockquote>
 <p>NO2. 复制指定目录到当前目录</p>
 <blockquote>
-<p>[root@rehat root]# cp -r /root/test .<br>[root@rehat root]# cp -r /root/test/ .</p>
-<font color="red">两者效果一样，第一种在复制目录时，会将源路径的最后一级目录全部复制过去，包括它本身。</font>
+<p>[root@rehat root]# cp -r /root/test .<br>[root@rehat root]# cp -r /root/test/ .<br><font color="red">两者效果一样，第一种在复制目录时，会将源路径的最后一级目录全部复制过去，包括它本身。</font></p>
 </blockquote>
 </blockquote>
 <blockquote>
@@ -462,7 +461,7 @@
 <p>[root@rehat root]# chmod 700 -R test</p>
 </blockquote>
 </blockquote>
-<h3 id="改变文件或文件夹拥有者-gt-chown"><a href="#改变文件或文件夹拥有者-gt-chown" class="headerlink" title="改变文件或文件夹拥有者  -&gt; chown"></a>改变文件或文件夹拥有者  -&gt; chown</h3><p>  <em><font color="red">该命令只有 root 才能使用</font></em></p>
+<h3 id="改变文件或文件夹拥有者-gt-chown"><a href="#改变文件或文件夹拥有者-gt-chown" class="headerlink" title="改变文件或文件夹拥有者  -&gt; chown"></a>改变文件或文件夹拥有者  -&gt; chown</h3><p>  *<font color="red">该命令只有 root 才能使用</font>*</p>
 <blockquote>
 <p>NO1. 更改某个文件的拥有者</p>
 <blockquote>
@@ -577,31 +576,31 @@
 <blockquote>
 <p>NO2. 让当前目录中文件属主具有读、写权限，并且文件所属组的用户和其他用户具有读权限的文件；</p>
 <blockquote>
-<p>[root@rehat root]# find . -perm 644 -exec ls -l {} \;</p>
+<p>[root@rehat root]# find . -perm 644 -exec ls -l {} ;</p>
 </blockquote>
 </blockquote>
 <blockquote>
 <p>NO3. 为了查找系统中所有文件长度为0的普通文件，并列出它们的完整路径；</p>
 <blockquote>
-<p>[root@rehat root]# find / size 0 -type f -exec ls -l {} \;</p>
+<p>[root@rehat root]# find / size 0 -type f -exec ls -l {} ;</p>
 </blockquote>
 </blockquote>
 <blockquote>
 <p>NO4. 查找/var/logs目录中更改时间在7日以前的普通文件，并在删除之前询问它们；</p>
 <blockquote>
-<p>[root@rehat root]# find /var/logs -mtime +7 -type f -ok rm -i {} \;</p>
+<p>[root@rehat root]# find /var/logs -mtime +7 -type f -ok rm -i {} ;</p>
 </blockquote>
 </blockquote>
 <blockquote>
 <p>NO5. 为/找系统中所有属于root组的文件；</p>
 <blockquote>
-<p>[root@rehat root]# find / -group root -exec ls -l {} \;</p>
+<p>[root@rehat root]# find / -group root -exec ls -l {} ;</p>
 </blockquote>
 </blockquote>
 <blockquote>
 <p>NO6. find命令将删除当目录中访问时间在7日以来、含有数字后缀的admin.log文件</p>
 <blockquote>
-<p>[root@rehat root]# find . -name “admin.log[0-9][0-9][0-9]” -atime -7 -ok rm { } \;</p>
+<p>[root@rehat root]# find . -name “admin.log[0-9][0-9][0-9]” -atime -7 -ok rm { } ;</p>
 </blockquote>
 </blockquote>
 <blockquote>
@@ -683,9 +682,7 @@
 <p>[root@rehat root]# mv /test2 /test2_2</p>
 </blockquote>
 </blockquote>
-<h3 id="开放防火墙端口"><a href="#开放防火墙端口" class="headerlink" title="开放防火墙端口"></a>开放防火墙端口</h3><p>#关闭防火墙<br>service iptables stop<br>vi /etc/sysconfig/iptables  </p>
-<p>#添加<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT  </p>
-<p>#重启防火墙<br>service iptables restart  </p>
+<h3 id="开放防火墙端口"><a href="#开放防火墙端口" class="headerlink" title="开放防火墙端口"></a>开放防火墙端口</h3><p>#关闭防火墙<br>service iptables stop<br>vi /etc/sysconfig/iptables<br>#添加<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT<br>#重启防火墙<br>service iptables restart  </p>
 <p>1、关闭firewall：<br>systemctl stop firewalld.service #停止firewall<br>systemctl disable firewalld.service #禁止firewall开机启动<br>firewall-cmd –state #查看默认防火墙状态（关闭后显示notrunning，开启后显示running）</p>
 
       
@@ -994,15 +991,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">kill session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://hnxyhcz.github.io">
   <title>Oracle | Hnxyhcz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="oracle归档模式 数据表空间和索引表空间最好分开  创建用户时，不指定表空间，会默认使用user表空间  不能简单滴说表和索引分开表空间放就能提高效率（性能）。  提高性能是有前提条件的，只有在数据表空间和索引表空间分开存放在不同磁盘的时候，由于减少了磁盘I/O的竞争，才表现出性能的提高。 假如你只有一块磁盘那么即使分开存放了表和索引表空间，只是优化了存储管理，对性能没有什么提高。  一个用户">
+  <meta name="description" content="oracle归档模式 数据表空间和索引表空间最好分开  创建用户时，不指定表空间，会默认使用user表空间  不能简单滴说表和索引分开表空间放就能提高效率（性能）。  提高性能是有前提条件的，只有在数据表空间和索引表空间分开存放在不同磁盘的时候，由于减少了磁盘I/O的竞争，才表现出性能的提高。  假如你只有一块磁盘那么即使分开存放了表和索引表空间，只是优化了存储管理，对性能没有什么提高。  一个用">
 <meta name="keywords" content="oracle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oracle">
 <meta property="og:url" content="http://hnxyhcz.github.io/2018/03/21/oracle_201803211350/index.html">
 <meta property="og:site_name" content="Hnxyhcz的博客">
-<meta property="og:description" content="oracle归档模式 数据表空间和索引表空间最好分开  创建用户时，不指定表空间，会默认使用user表空间  不能简单滴说表和索引分开表空间放就能提高效率（性能）。  提高性能是有前提条件的，只有在数据表空间和索引表空间分开存放在不同磁盘的时候，由于减少了磁盘I/O的竞争，才表现出性能的提高。 假如你只有一块磁盘那么即使分开存放了表和索引表空间，只是优化了存储管理，对性能没有什么提高。  一个用户">
+<meta property="og:description" content="oracle归档模式 数据表空间和索引表空间最好分开  创建用户时，不指定表空间，会默认使用user表空间  不能简单滴说表和索引分开表空间放就能提高效率（性能）。  提高性能是有前提条件的，只有在数据表空间和索引表空间分开存放在不同磁盘的时候，由于减少了磁盘I/O的竞争，才表现出性能的提高。  假如你只有一块磁盘那么即使分开存放了表和索引表空间，只是优化了存储管理，对性能没有什么提高。  一个用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-12T02:09:31.097Z">
+<meta property="og:updated_time" content="2019-10-12T02:50:08.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle">
-<meta name="twitter:description" content="oracle归档模式 数据表空间和索引表空间最好分开  创建用户时，不指定表空间，会默认使用user表空间  不能简单滴说表和索引分开表空间放就能提高效率（性能）。  提高性能是有前提条件的，只有在数据表空间和索引表空间分开存放在不同磁盘的时候，由于减少了磁盘I/O的竞争，才表现出性能的提高。 假如你只有一块磁盘那么即使分开存放了表和索引表空间，只是优化了存储管理，对性能没有什么提高。  一个用户">
+<meta name="twitter:description" content="oracle归档模式 数据表空间和索引表空间最好分开  创建用户时，不指定表空间，会默认使用user表空间  不能简单滴说表和索引分开表空间放就能提高效率（性能）。  提高性能是有前提条件的，只有在数据表空间和索引表空间分开存放在不同磁盘的时候，由于减少了磁盘I/O的竞争，才表现出性能的提高。  假如你只有一块磁盘那么即使分开存放了表和索引表空间，只是优化了存储管理，对性能没有什么提高。  一个用">
   
     <link rel="alternative" href="/atom.xml" title="Hnxyhcz的博客" type="application/atom+xml">
   
@@ -178,7 +178,8 @@
 </li>
 <li><p>不能简单滴说表和索引分开表空间放就能提高效率（性能）。</p>
 </li>
-<li>提高性能是有前提条件的，只有在数据表空间和索引表空间分开存放在不同磁盘的时候，由于减少了磁盘I/O的竞争，才表现出性能的提高。</li>
+<li><p>提高性能是有前提条件的，只有在数据表空间和索引表空间分开存放在不同磁盘的时候，由于减少了磁盘I/O的竞争，才表现出性能的提高。</p>
+</li>
 <li><p>假如你只有一块磁盘那么即使分开存放了表和索引表空间，只是优化了存储管理，对性能没有什么提高。</p>
 </li>
 <li><p>一个用户只能指定一个表空间，要想把索引存储到其他表空间需要</p>
@@ -194,28 +195,26 @@
 </li>
 </ol>
 <ol start="3">
-<li>归档模式未开启(每天备份可能会丢失数据 一主一备不能开启)</li>
+<li><p>归档模式未开启(每天备份可能会丢失数据 一主一备不能开启)</p>
+</li>
 <li><p>在线日志只有3个 正常5个 大小50M是默认 应该200M-300M</p>
 <blockquote>
 <p>在线重做日志(online redo log)</p>
 <pre><code>* 主要用于：Oracle数据库所在服务器突然掉电、突然重启或者执行shutdown abort等命令使得在服务器重新启动之后，
 Oracle数据库没有办法正常的启动实例。此时，在线重做日志就派上了用场，Oracle会使用在线重做日志，
-把数据库恢复到服务器掉电前的那一个时刻，从而使得数据库能正常的启动起来 。
-</code></pre></blockquote>
+把数据库恢复到服务器掉电前的那一个时刻，从而使得数据库能正常的启动起来 。</code></pre></blockquote>
 <pre><code>* 在Oracle数据库中，默认情况下，至少会有两个重做日志组，而且每个组里面至少包含了一个重做日志文件。
-日志组不会自动增加，在一个写满之后，会自动去写下一个。在下一个被写满之后会又从第一个开始写起。
-</code></pre><blockquote>
+日志组不会自动增加，在一个写满之后，会自动去写下一个。在下一个被写满之后会又从第一个开始写起。</code></pre><blockquote>
 <p>归档日志(archive log)</p>
 <pre><code>* 主要用于硬件级别的错误：磁盘的坏道导致无法读写、写入的失败、磁盘受损导致数据库数据丢失。这就要使用归档日志文件，
-通过归档日志文件，把数据库恢复到归档日志所在的时间点上然后再通过在线重做日志文件把数据库恢复到当前的时间点上。
-</code></pre></blockquote>
+通过归档日志文件，把数据库恢复到归档日志所在的时间点上然后再通过在线重做日志文件把数据库恢复到当前的时间点上。</code></pre></blockquote>
 </li>
 </ol>
 <p>关于重做日志组参考：<a href="http://blog.csdn.net/diguoguo/article/details/5909949" target="_blank" rel="noopener">http://blog.csdn.net/diguoguo/article/details/5909949</a></p>
 <ol start="5">
 <li><p>告警文件超过10G,正常100M以内，大部分错误是11g的bug,告警日志反映系统的健康状态，应该每天查看<br> 可以直接将告警文件拷贝走，oracle会自动生成该文件<br> – 告警日志位置（sqlplus）<br> show parameter dump_dest;</p>
 <p> – 检查Oracle控制文件状态<br> select * from v$controlfile;</p>
-<p> – 查看日志组<br> select <em> from v$log;<br> – 检查Oracle在线日志状态<br> select </em> from v$logfile;</p>
+<p> – 查看日志组<br> select * from v$log;<br> – 检查Oracle在线日志状态<br> select * from v$logfile;</p>
 <p> – 查看日志位置<br> select * from v$diag_info;<br> – 224数据库的bdcor5，alert日志大小：498M, trace大小：178M</p>
 </li>
 </ol>
@@ -540,15 +539,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">kill session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
               </li>
              
               <li class="article-tag-list-item">

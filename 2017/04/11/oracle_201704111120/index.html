@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hnxyhcz的博客">
 <meta property="og:description" content="bug 记录之前遇到一个bug，程序执行数据库操作后就没有任何反应了，没有任何报错信息，页面正常刷新，数据库中修改的数据没有变化。经过排查发现数据库表被锁了。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-12T02:09:31.097Z">
+<meta property="og:updated_time" content="2019-10-12T02:50:08.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle">
 <meta name="twitter:description" content="bug 记录之前遇到一个bug，程序执行数据库操作后就没有任何反应了，没有任何报错信息，页面正常刷新，数据库中修改的数据没有变化。经过排查发现数据库表被锁了。">
@@ -171,7 +171,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="bug-记录"><a href="#bug-记录" class="headerlink" title="bug 记录"></a>bug 记录</h3><p>之前遇到一个bug，程序执行数据库操作后就没有任何反应了，<br>没有任何报错信息，页面正常刷新，数据库中修改的数据没有变化。<br>经过排查发现数据库表被锁了。<br><a id="more"></a></p>
+        <h3 id="bug-记录"><a href="#bug-记录" class="headerlink" title="bug 记录"></a>bug 记录</h3><p>之前遇到一个bug，程序执行数据库操作后就没有任何反应了，<br>没有任何报错信息，页面正常刷新，数据库中修改的数据没有变化。<br>经过排查发现数据库表被锁了。</p>
+<a id="more"></a>
+
 <p>查询锁定表的信息：<br>select * from v$session t1, v$locked_object t2 where t1.sid = t2.SESSION_ID; </p>
 <p>最后通过kill session的方式终止进程，语法结构为：<br>alter system kill session ‘sid, serial#’;</p>
 <p>终止多条进程：<br>select ‘alter system kill session ‘’’ || sid || ‘,’ || serial# || ‘’’;’<br>from gv$session<br>where sid in (<br>    select SID from v$session t1, v$locked_object t2 where t1.sid = t2.SESSION_ID<br>)</p>
@@ -486,15 +488,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">kill session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
               </li>
              
               <li class="article-tag-list-item">

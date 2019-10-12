@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hnxyhcz的博客">
 <meta property="og:description" content="在公司电脑上搭建私服，启动nexus后保如下错误  wrapper  | –&amp;gt; Wrapper Started as Daemonwrapper  | Launching a JVM…jvm 1    | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.orgjvm 1    |   Copyright 1999-2006 Tanu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-12T02:09:31.093Z">
+<meta property="og:updated_time" content="2019-10-12T02:50:08.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="修改JAVA_HOME无效，java版本保持不变">
 <meta name="twitter:description" content="在公司电脑上搭建私服，启动nexus后保如下错误  wrapper  | –&amp;gt; Wrapper Started as Daemonwrapper  | Launching a JVM…jvm 1    | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.orgjvm 1    |   Copyright 1999-2006 Tanu">
@@ -177,6 +177,7 @@
 <p>jvm 1    | at org.sonatype.appcontext.internal.HierarchicalMap.get(HierarchicalMap.java:131)</p>
 </blockquote>
 <a id="more"></a>
+
 <p>该异常由JDK版本引起的，从1.8换到1.7，异常消失</p>
 <p>但是当我修改JAVA_HOME的路径后，运行java -version显示的java版本始终是1.8版本。</p>
 <h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>可能在系统目录里面有java.exe。导致优先调用了系统目录中的java.exe，而不是自己配置的JAVA_HOME中的java.exe？</p>
@@ -490,15 +491,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">kill session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://hnxyhcz.github.io">
   <title>zabbix配置踩过的坑 | Hnxyhcz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="zabbix 配置告警 自己编写脚本一定要在linux上新建文件，千万不要在window上编写好了在拷贝到服务器上，否则web页面提示“已送达”，实际却没有收到信息   zabbix“用户组”的“许可”对新加进来的模板默认是“拒绝”，新加模板需要将其添加到用户权限的“许可”里面  3、配置操作故障{TRIGGER.STATUS}，服务器：{HOSTNAME1} 发生：{TRIGGER.NAME}">
+  <meta name="description" content="zabbix 配置告警** 自己编写脚本一定要在linux上新建文件，千万不要在window上编写好了在拷贝到服务器上，否则web页面提示“已送达”，实际却没有收到信息 ** ** zabbix“用户组”的“许可”对新加进来的模板默认是“拒绝”，新加模板需要将其添加到用户权限的“许可”里面 ** 3、配置操作故障{TRIGGER.STATUS}，服务器：{HOSTNAME1} 发生：{TRIGGE">
 <meta name="keywords" content="zabbix">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zabbix配置踩过的坑">
 <meta property="og:url" content="http://hnxyhcz.github.io/2017/10/10/zabbix配置踩过的坑/index.html">
 <meta property="og:site_name" content="Hnxyhcz的博客">
-<meta property="og:description" content="zabbix 配置告警 自己编写脚本一定要在linux上新建文件，千万不要在window上编写好了在拷贝到服务器上，否则web页面提示“已送达”，实际却没有收到信息   zabbix“用户组”的“许可”对新加进来的模板默认是“拒绝”，新加模板需要将其添加到用户权限的“许可”里面  3、配置操作故障{TRIGGER.STATUS}，服务器：{HOSTNAME1} 发生：{TRIGGER.NAME}">
+<meta property="og:description" content="zabbix 配置告警** 自己编写脚本一定要在linux上新建文件，千万不要在window上编写好了在拷贝到服务器上，否则web页面提示“已送达”，实际却没有收到信息 ** ** zabbix“用户组”的“许可”对新加进来的模板默认是“拒绝”，新加模板需要将其添加到用户权限的“许可”里面 ** 3、配置操作故障{TRIGGER.STATUS}，服务器：{HOSTNAME1} 发生：{TRIGGE">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-12T02:09:31.097Z">
+<meta property="og:updated_time" content="2019-10-12T02:50:08.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zabbix配置踩过的坑">
-<meta name="twitter:description" content="zabbix 配置告警 自己编写脚本一定要在linux上新建文件，千万不要在window上编写好了在拷贝到服务器上，否则web页面提示“已送达”，实际却没有收到信息   zabbix“用户组”的“许可”对新加进来的模板默认是“拒绝”，新加模板需要将其添加到用户权限的“许可”里面  3、配置操作故障{TRIGGER.STATUS}，服务器：{HOSTNAME1} 发生：{TRIGGER.NAME}">
+<meta name="twitter:description" content="zabbix 配置告警** 自己编写脚本一定要在linux上新建文件，千万不要在window上编写好了在拷贝到服务器上，否则web页面提示“已送达”，实际却没有收到信息 ** ** zabbix“用户组”的“许可”对新加进来的模板默认是“拒绝”，新加模板需要将其添加到用户权限的“许可”里面 ** 3、配置操作故障{TRIGGER.STATUS}，服务器：{HOSTNAME1} 发生：{TRIGGE">
   
     <link rel="alternative" href="/atom.xml" title="Hnxyhcz的博客" type="application/atom+xml">
   
@@ -171,13 +171,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="zabbix-配置告警"><a href="#zabbix-配置告警" class="headerlink" title="zabbix 配置告警"></a>zabbix 配置告警</h1><p><strong> 自己编写脚本一定要在linux上新建文件，千万不要在window上编写好了在拷贝到服务器上，否则web页面提示“已送达”，实际却没有收到信息 </strong></p>
-<p><strong> zabbix“用户组”的“许可”对新加进来的模板默认是“拒绝”，新加模板需要将其添加到用户权限的“许可”里面 </strong></p>
+        <h1 id="zabbix-配置告警"><a href="#zabbix-配置告警" class="headerlink" title="zabbix 配置告警"></a>zabbix 配置告警</h1><p>** 自己编写脚本一定要在linux上新建文件，千万不要在window上编写好了在拷贝到服务器上，否则web页面提示“已送达”，实际却没有收到信息 **</p>
+<p>** zabbix“用户组”的“许可”对新加进来的模板默认是“拒绝”，新加模板需要将其添加到用户权限的“许可”里面 **</p>
 <p>3、配置操作<br>故障{TRIGGER.STATUS}，服务器：{HOSTNAME1} 发生：{TRIGGER.NAME} 故障!</p>
 <p>告警主机:{HOSTNAME1}<br>告警时间:{EVENT.DATE} {EVENT.TIME}<br>告警等级:{TRIGGER.SEVERITY}<br>告警信息: {TRIGGER.NAME}<br>告警项目:{TRIGGER.KEY1}<br>问题详情:{ITEM.NAME}:{ITEM.VALUE}<br>当前状态:{TRIGGER.STATUS}:{ITEM.VALUE1}<br>事件ID:{EVENT.ID}</p>
 <p>4、配置恢复操作<br>恢复{TRIGGER.STATUS}，服务器：{HOSTNAME1}：{TRIGGER.NAME} 已恢复!</p>
 <p>告警主机:{HOSTNAME1}<br>告警时间:{EVENT.DATE} {EVENT.TIME}<br>告警等级:{TRIGGER.SEVERITY}<br>告警信息: {TRIGGER.NAME}<br>告警项目:{TRIGGER.KEY1}<br>问题详情:{ITEM.NAME}:{ITEM.VALUE}<br>当前状态:{TRIGGER.STATUS}:{ITEM.VALUE1}<br>事件ID:{EVENT.ID}</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line">import smtplib</span><br><span class="line">from email.mime.text import MIMEText</span><br><span class="line">import sys</span><br><span class="line"></span><br><span class="line">mail_host = <span class="string">'smtp.jnyl-tech.com'</span></span><br><span class="line">mail_user = <span class="string">'huang.rp@jnyl-tech.com'</span></span><br><span class="line">mail_pass = <span class="string">'A4LP78193j'</span></span><br><span class="line"></span><br><span class="line">def send_mail(to_list, subject, content):</span><br><span class="line">    me = <span class="string">"zabbix 监控告警平台"</span> + <span class="string">"&lt;"</span> + mail_user + <span class="string">"&gt;"</span></span><br><span class="line">    msg = MIMEText(content, <span class="string">'plain'</span>, <span class="string">'utf-8'</span>)</span><br><span class="line">    msg[<span class="string">'Subject'</span>] = subject</span><br><span class="line">    msg[<span class="string">'From'</span>] = me</span><br><span class="line">    msg[<span class="string">'to'</span>] = to_list</span><br><span class="line">    try:</span><br><span class="line">        s = smtplib.SMTP()</span><br><span class="line">        s.connect(mail_host)</span><br><span class="line">        s.login(mail_user, mail_pass)</span><br><span class="line">        s.sendmail(me, to_list, msg.as_string())</span><br><span class="line">        s.close()</span><br><span class="line">        <span class="built_in">return</span> True</span><br><span class="line">    except Exception as e:</span><br><span class="line">        <span class="built_in">print</span>(str(e))</span><br><span class="line">        <span class="built_in">return</span> False</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    send_mail(sys.argv[1], sys.argv[2], sys.argv[3])</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -485,15 +486,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">kill session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
               </li>
              
               <li class="article-tag-list-item">

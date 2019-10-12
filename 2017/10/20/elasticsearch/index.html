@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hnxyhcz的博客">
 <meta property="og:description" content="Elasticsearch安装去 官网 根据系统下载相应的 Elasticsearch (我用的是linux，下载tar.gz文件) 将下载的tar.gz文件解压到要安装的位置，配置文件在elasticsearch目录config下 启动进入elasticsearch目录的bin目录，执行  ./elasticsearch  相关操作12345678910111213141516# 插入数据cur">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-12T02:09:31.097Z">
+<meta property="og:updated_time" content="2019-10-12T02:50:08.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Elasticsearch">
 <meta name="twitter:description" content="Elasticsearch安装去 官网 根据系统下载相应的 Elasticsearch (我用的是linux，下载tar.gz文件) 将下载的tar.gz文件解压到要安装的位置，配置文件在elasticsearch目录config下 启动进入elasticsearch目录的bin目录，执行  ./elasticsearch  相关操作12345678910111213141516# 插入数据cur">
@@ -178,6 +178,7 @@
 <p>./elasticsearch</p>
 </blockquote>
 <h2 id="相关操作"><a href="#相关操作" class="headerlink" title="相关操作"></a>相关操作</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">curl -XPUT <span class="string">'localhost:9200/test/employee/1'</span> -d <span class="string">'</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    "first_name" : "John",</span></span><br><span class="line"><span class="string">    "last_name" :  "Smith",</span></span><br><span class="line"><span class="string">    "age" :        25,</span></span><br><span class="line"><span class="string">    "about" :      "I love to go rock climbing",</span></span><br><span class="line"><span class="string">    "interests": [ "sports", "music" ]</span></span><br><span class="line"><span class="string">&#125;'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询数据</span></span><br><span class="line">curl -XGET <span class="string">'localhost:9200/test/employee/1'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除数据</span></span><br><span class="line">curl -XDELETE <span class="string">'localhost:9200/test/employee/3'</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="可视化插件安装（可选）"><a href="#可视化插件安装（可选）" class="headerlink" title="可视化插件安装（可选）"></a>可视化插件安装（可选）</h2><p>去 <a href="https://www.elastic.co/cn/" target="_blank" rel="noopener">官网</a> 根据系统下载相应的 Kibana</p>
 <p>在Kibana上下载 Sense</p>
 
@@ -487,15 +488,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">kill session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
               </li>
              
               <li class="article-tag-list-item">

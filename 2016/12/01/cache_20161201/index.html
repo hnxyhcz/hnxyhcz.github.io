@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hnxyhcz的博客">
 <meta property="og:description" content="什么是缓存缓存就是要将一些经常使用的数据缓存到内存或者各种储存介质中，当再次使用时可以不用去数据库中查询，减少与数据库的交互，提高性能。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-12T02:09:31.097Z">
+<meta property="og:updated_time" content="2019-10-12T02:50:08.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一级缓存和二级缓存的区别">
 <meta name="twitter:description" content="什么是缓存缓存就是要将一些经常使用的数据缓存到内存或者各种储存介质中，当再次使用时可以不用去数据库中查询，减少与数据库的交互，提高性能。">
@@ -171,7 +171,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是缓存"><a href="#什么是缓存" class="headerlink" title="什么是缓存"></a>什么是缓存</h3><p>缓存就是要将一些经常使用的数据缓存到内存或者各种储存介质中，当再次使用时可以不用去数据库中查询，减少与数据库的交互，提高性能。<br><a id="more"></a></p>
+        <h3 id="什么是缓存"><a href="#什么是缓存" class="headerlink" title="什么是缓存"></a>什么是缓存</h3><p>缓存就是要将一些经常使用的数据缓存到内存或者各种储存介质中，当再次使用时可以不用去数据库中查询，减少与数据库的交互，提高性能。</p>
+<a id="more"></a>
 <h3 id="缓存的作用"><a href="#缓存的作用" class="headerlink" title="缓存的作用"></a>缓存的作用</h3><h4 id="一级缓存"><a href="#一级缓存" class="headerlink" title="一级缓存"></a>一级缓存</h4><p>一级缓存是Session级别的，也就是说在一个事务中才会启作用。比如在一个事务中同时查询同一个对象，则不会两次去数据库中查询。</p>
 <h4 id="二级缓存"><a href="#二级缓存" class="headerlink" title="二级缓存"></a>二级缓存</h4><p>二级缓存是sessionFactory级别的，不同的事务之间是可以共享的，有些权限，当用户首次登陆后便将关联的权限放到二级缓存中，这样每次需要权限时就无需再查询数据库了。</p>
 <h3 id="设计的原因"><a href="#设计的原因" class="headerlink" title="设计的原因"></a>设计的原因</h3><p>为什么这样设计：<br>一般情况下，我们查询的数据一般是实时的，使用二级缓存肯定不行，使用一级缓存既利用了缓存又不会影响实时。<br>使用二级缓存是为了存储一些比较稳定的数据，如权限，只有在用户修改了权限且重新登录时才能生效。</p>
@@ -482,15 +483,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">kill session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
               </li>
              
               <li class="article-tag-list-item">

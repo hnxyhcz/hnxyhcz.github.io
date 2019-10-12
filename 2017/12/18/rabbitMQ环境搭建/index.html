@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hnxyhcz的博客">
 <meta property="og:description" content="CentOS6.5 搭建 RabbitMQ 环境操作系统环境服务器：root@10.24.10.173  gener#tech.2016  操作系统：CentOS6.5(X86_64)  安装Erlang根据安装RabbitMQ的版本选择合适的Erlang，查看RabbitMQ对应的Erlang版本。我安装的是RabbitMQ-3.6.14，选择Erlang-19.3的版本  下载Erlang">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-12T02:09:31.097Z">
+<meta property="og:updated_time" content="2019-10-12T02:50:08.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RabbitMQ环境搭建">
 <meta name="twitter:description" content="CentOS6.5 搭建 RabbitMQ 环境操作系统环境服务器：root@10.24.10.173  gener#tech.2016  操作系统：CentOS6.5(X86_64)  安装Erlang根据安装RabbitMQ的版本选择合适的Erlang，查看RabbitMQ对应的Erlang版本。我安装的是RabbitMQ-3.6.14，选择Erlang-19.3的版本  下载Erlang">
@@ -192,6 +192,7 @@
 </li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#解压</span></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/</span><br><span class="line">tar xvf /tmp/otp_src_19.3.tar.gz</span><br><span class="line"><span class="built_in">cd</span> otp_src_19.3</span><br><span class="line"></span><br><span class="line"><span class="comment">#配置 '--prefix'指定的安装目录</span></span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/otp_src_19.3 --with-ssl -<span class="built_in">enable</span>-threads -<span class="built_in">enable</span>-smmp-support -<span class="built_in">enable</span>-kernel-poll --<span class="built_in">enable</span>-hipe --without-javac</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">make &amp;&amp; make install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置环境变量</span></span><br><span class="line">vim /etc/profile</span><br><span class="line"></span><br><span class="line"><span class="comment">#在文件末尾添加下面代码 'ERLANG_HOME'等于上一步'--prefix'指定的目录</span></span><br><span class="line">ERLANG_HOME=/usr/<span class="built_in">local</span>/otp_src_19.3</span><br><span class="line">PATH=<span class="variable">$ERLANG_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> ERLANG_HOME</span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"></span><br><span class="line"><span class="comment">#使环境变量生效</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+
 <p>安装成功后，输入 erl 命令检验是否安装成功</p>
 <h3 id="安装遇到的问题"><a href="#安装遇到的问题" class="headerlink" title="安装遇到的问题"></a>安装遇到的问题</h3><p>在配置的时候（./configure）可能会出现以下错误</p>
 <hr>
@@ -220,6 +221,7 @@
 </ol>
 <h2 id="安装RabbitMQ"><a href="#安装RabbitMQ" class="headerlink" title="安装RabbitMQ"></a>安装RabbitMQ</h2><p>下载RabbitMQ <a href="https://packagecloud.io/rabbitmq/rabbitmq-server/" target="_blank" rel="noopener">官方地址</a>: 我这里下载的是3.6.14版本的rpm文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">yum install socat</span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">rpm -i --nodeps rabbitmq-server-3.6.0-1.noarch.rpm</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 rpm -i rabbitmq-server-3.6.0-1.noarch.rpm 安装的话，可能会因为rabbitmq依赖导致以下错误</span></span><br><span class="line"><span class="comment"># error: Failed dependencies:</span></span><br><span class="line"><span class="comment">#        erlang &gt;= R16B-03 is needed by rabbitmq-server-3.6.0-1.noarch</span></span><br><span class="line"><span class="comment"># 因为之前已经安装过erlang-3.19，所以使用--nodeps忽略依赖</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动等相关操作</span></span><br><span class="line">/etc/init.d/rabbitmq-server &#123;start|stop|status|rotate-logs|restart|condrestart|try-restart|reload|force-reload&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用WEB管理(端口：15672)</span></span><br><span class="line"><span class="built_in">cd</span> /usr/lib/rabbitmq/bin</span><br><span class="line">./rabbitmq-plugins <span class="built_in">enable</span> rabbitmq_management</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加用户</span></span><br><span class="line">./rabbitmqctl add_user <span class="built_in">test</span> <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置权限</span></span><br><span class="line">./rabbitmqctl set_user_tags <span class="built_in">test</span> administrator</span><br><span class="line">./rabbitmqctl list_users</span><br><span class="line">./rabbitmqctl set_permissions -p / <span class="built_in">test</span> <span class="string">'.*'</span> <span class="string">'.*'</span> <span class="string">'.*'</span></span><br></pre></td></tr></table></figure>
+
 <ol>
 <li>配置RabbitMQ<ul>
 <li>RabbitMQ的根目录：/usr/lib/rabbitmq</li>
@@ -541,15 +543,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">kill session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
               </li>
              
               <li class="article-tag-list-item">

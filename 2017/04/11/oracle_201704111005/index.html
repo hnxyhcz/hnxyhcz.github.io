@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hnxyhcz的博客">
 <meta property="og:description" content="Oracle单引号的作用在ORACLE中，单引号有两个作用：  引用：字符串是由单引号引用转义：被视为转义字符">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-12T02:09:31.097Z">
+<meta property="og:updated_time" content="2019-10-12T02:50:08.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle中的单引号">
 <meta name="twitter:description" content="Oracle单引号的作用在ORACLE中，单引号有两个作用：  引用：字符串是由单引号引用转义：被视为转义字符">
@@ -173,12 +173,18 @@
       
         <h3 id="Oracle单引号的作用"><a href="#Oracle单引号的作用" class="headerlink" title="Oracle单引号的作用"></a>Oracle单引号的作用</h3><p>在ORACLE中，单引号有两个作用：</p>
 <blockquote>
-<p>引用：字符串是由单引号引用<br>转义：被视为转义字符<br><a id="more"></a></p>
+<p>引用：字符串是由单引号引用<br>转义：被视为转义字符</p>
 </blockquote>
+<a id="more"></a>
 <h5 id="不包含-的转义字符"><a href="#不包含-的转义字符" class="headerlink" title="不包含||的转义字符"></a>不包含||的转义字符</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开始的单引号和结束的单引号被视为引用</span></span><br><span class="line"><span class="comment"># 中间的单引号被视为转义</span></span><br><span class="line"><span class="keyword">select</span> <span class="string">''''</span> <span class="keyword">from</span> dual;</span><br><span class="line"><span class="keyword">select</span> <span class="string">' '' '</span> <span class="keyword">from</span> dual;</span><br><span class="line"><span class="keyword">select</span> <span class="string">'I''m superman'</span> <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
-<h5 id="包含-的转义字符"><a href="#包含-的转义字符" class="headerlink" title="包含||的转义字符"></a>包含||的转义字符</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 包含||拼接字符的</span></span><br><span class="line"><span class="comment"># 我们需要将字符串根据||字符拆分看成多个字符串，这时被拆分的已经不包含||字符了，处理方式跟上面一致</span></span><br><span class="line"><span class="comment"># 开始的单引号和结束的单引号被视为引用</span></span><br><span class="line"><span class="comment"># 中间的单引号被视为转义</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="string">'today is '''</span> || to_char(<span class="keyword">sysdate</span>,<span class="string">'yyyy-MM-dd'</span>) || <span class="string">''''</span> <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment"># 'today is ''' || to_char(sysdate,'yyyy-MM-dd') || ''''</span></span><br><span class="line"><span class="comment"># 将上面的字符拆分为 'today is ''' 和 to_char(sysdate,'yyyy-MM-dd') 和 ''''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果为</span></span><br><span class="line">&gt;&gt;&gt; today is '2017-04-11'</span><br></pre></td></tr></table></figure>
-<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a><font color="red">注意</font></h5><p><font color="red"><br>转义是密集的，如果单引号出现在转义的位置上，<br>而该单引号后面应该紧跟需要转义的字符，否则该单引号充当的不是转义，而是引用<br></font><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 错误示范：</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="string">''</span> <span class="string">''</span> <span class="keyword">FROM</span> DUAL;</span><br></pre></td></tr></table></figure></p>
 
+<h5 id="包含-的转义字符"><a href="#包含-的转义字符" class="headerlink" title="包含||的转义字符"></a>包含||的转义字符</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 包含||拼接字符的</span></span><br><span class="line"><span class="comment"># 我们需要将字符串根据||字符拆分看成多个字符串，这时被拆分的已经不包含||字符了，处理方式跟上面一致</span></span><br><span class="line"><span class="comment"># 开始的单引号和结束的单引号被视为引用</span></span><br><span class="line"><span class="comment"># 中间的单引号被视为转义</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="string">'today is '''</span> || to_char(<span class="keyword">sysdate</span>,<span class="string">'yyyy-MM-dd'</span>) || <span class="string">''''</span> <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment"># 'today is ''' || to_char(sysdate,'yyyy-MM-dd') || ''''</span></span><br><span class="line"><span class="comment"># 将上面的字符拆分为 'today is ''' 和 to_char(sysdate,'yyyy-MM-dd') 和 ''''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果为</span></span><br><span class="line">&gt;&gt;&gt; today is '2017-04-11'</span><br></pre></td></tr></table></figure>
+
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a><font color="red">注意</font></h5><font color="red">
+转义是密集的，如果单引号出现在转义的位置上，
+而该单引号后面应该紧跟需要转义的字符，否则该单引号充当的不是转义，而是引用
+</font>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 错误示范：</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="string">''</span> <span class="string">''</span> <span class="keyword">FROM</span> DUAL;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -485,15 +491,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">kill session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle转义和引用</a>
               </li>
              
               <li class="article-tag-list-item">
