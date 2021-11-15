@@ -16,7 +16,7 @@
 <meta property="og:description" content="mongodb集群搭建（高可用 + 权限）  [toc] 概述 MongoDB 分片集群由以下组件组成：  mongos: 可以理解为前端路由，所有对mongodb集群的请求操作都有它来负责分发。 Shard: 存储实际的数据块，实际生产环境中一个shard server角色可由几台机器组个一个replicateSet承担，防止主机单点故障。 config: mongod实例，负责记录集群中的配置">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/135529/201601/135529-20160127165843770-974728314.png">
-<meta property="og:updated_time" content="2021-11-15T03:28:38.921Z">
+<meta property="og:updated_time" content="2021-11-15T03:39:29.437Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hnxyhcz的博客">
 <meta name="twitter:description" content="mongodb集群搭建（高可用 + 权限）  [toc] 概述 MongoDB 分片集群由以下组件组成：  mongos: 可以理解为前端路由，所有对mongodb集群的请求操作都有它来负责分发。 Shard: 存储实际的数据块，实际生产环境中一个shard server角色可由几台机器组个一个replicateSet承担，防止主机单点故障。 config: mongod实例，负责记录集群中的配置">
@@ -168,6 +168,8 @@
 <li>config: mongod实例，负责记录集群中的配置信息（metadata, chunk信息）如果需要高可用的ConfigServer那么需要3个节点。</li>
 </ul>
 </blockquote>
+<a id="more"></a>
+
 <blockquote>
 <p><strong>集群一般由 shard(分片) + replicateSet(副本集) + mongos(路由) + config(配置服务)组成</strong></p>
 <p><img src="https://images2015.cnblogs.com/blog/135529/201601/135529-20160127165843770-974728314.png" alt="分片集群架构"></p>
